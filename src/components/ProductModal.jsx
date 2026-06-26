@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ShoppingBag } from "lucide-react";
 
-const WA_NUMBER = "94XXXXXXXXX"; // ← oya WhatsApp number
+const WA_NUMBER = "94768703900";
 
 const tagColors = {
   Bestseller: "bg-mocha-200 text-cream-50",

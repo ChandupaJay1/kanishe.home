@@ -5,7 +5,7 @@ export default function Cart({ items, onClose, onUpdateQty, onRemove }) {
   const total = items.reduce((sum, item) => sum + item.price * item.qty, 0);
   const packagingFee = total < 3000 && items.length > 0 ? 200 : 0;
 
-  const WA_NUMBER = "94XXXXXXXXX"; // ← oya WhatsApp number danna
+  const WA_NUMBER = "94768703900";
 
   const handleCheckout = () => {
     if (items.length === 0) return;

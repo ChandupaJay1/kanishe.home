@@ -5,8 +5,8 @@
 
 export const contactInfo = {
   whatsapp: {
-    number: "94XXXXXXXXX",          // e.g. "94771234567"  (no + or spaces)
-    display: "+94 XX XXX XXXX",     // shown on page
+    number: "94768703900",
+    display: "+94 76 870 3900",
   },
   instagram: {
     handle: "@kanishe.home",        // e.g. "@kanishe.home"
