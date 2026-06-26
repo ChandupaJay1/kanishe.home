@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { products, categories } from "../data/products";
+import { getProducts } from "../utils/storage";
+import { categories } from "../data/products";
 import ProductCard from "./ProductCard";
 import { fadeUp, fadeIn, staggerContainer, viewportOnce } from "../hooks/useScrollAnimation";
 
 export default function Shop({ onAddToCart, onViewProduct }) {
+  const products = getProducts();
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
 

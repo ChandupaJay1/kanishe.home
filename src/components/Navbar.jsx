@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 import { ShoppingBag, Menu, X } from "lucide-react";
 
 export default function Navbar({ cartCount, onCartClick }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const { auth } = useAuth();
   const navLinks = [
     { label: "Shop", to: "/shop" },
     { label: "Gift Sets", to: "/gift-sets" },
@@ -43,6 +45,11 @@ export default function Navbar({ cartCount, onCartClick }) {
               {link.label}
             </NavLink>
           ))}
+          {auth && (
+            <NavLink to="/admin" className={linkClass}>
+              Admin
+            </NavLink>
+          )}
         </div>
 
         {/* Cart + Mobile Menu */}

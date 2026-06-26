@@ -1,5 +1,9 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext";
+import ProtectedRoute from "./components/ProtectedRoute";
+import LoginPage from "./pages/LoginPage";
+import AdminPage from "./pages/AdminPage";
 import { AnimatePresence, motion } from "framer-motion";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -66,6 +70,8 @@ function Layout() {
       <div className="flex-1">
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/admin" element={<ProtectedRoute><AdminPage /></ProtectedRoute>} />
             <Route path="/" element={<PageTransition><HomePage onAddToCart={addToCart} /></PageTransition>} />
             <Route path="/shop" element={<PageTransition><ShopPage onAddToCart={addToCart} /></PageTransition>} />
             <Route path="/gift-sets" element={<PageTransition><GiftSetsPage onAddToCart={addToCart} /></PageTransition>} />
@@ -100,7 +106,9 @@ function Layout() {
 export default function App() {
   return (
     <BrowserRouter>
-      <Layout />
+      <AuthProvider>
+        <Layout />
+      </AuthProvider>
     </BrowserRouter>
   );
 }
