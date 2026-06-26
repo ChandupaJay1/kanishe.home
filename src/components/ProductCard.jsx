@@ -25,13 +25,17 @@ export default function ProductCard({ product, onAddToCart, onViewProduct }) {
         onKeyDown={(e) => e.key === "Enter" && onViewProduct(product)}
         aria-label={`View ${product.name}`}
       >
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="w-20 h-20 rounded-full bg-sand-200/60 blur-xl" />
-          <div className="absolute w-12 h-12 rounded-full bg-cream-300/80 blur-md" />
-          <span className="relative font-serif text-4xl text-mocha-200/50 font-light select-none">
-            {product.name.charAt(0)}
-          </span>
-        </div>
+        {product.imageUrl ? (
+            <img src={product.imageUrl} alt={product.name} className="w-full h-full object-cover" />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div className="w-20 h-20 rounded-full bg-sand-200/60 blur-xl" />
+              <div className="absolute w-12 h-12 rounded-full bg-cream-300/80 blur-md" />
+              <span className="relative font-serif text-4xl text-mocha-200/50 font-light select-none">
+                {product.name.charAt(0)}
+              </span>
+            </div>
+          )}
 
         {product.tag && (
           <span className={`absolute top-3 left-3 text-xs font-sans tracking-widest uppercase px-2 py-0.5 z-10 ${tagColors[product.tag] || "bg-mocha-200 text-cream-50"}`}>

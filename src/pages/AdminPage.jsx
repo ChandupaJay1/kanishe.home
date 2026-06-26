@@ -114,6 +114,13 @@ export default function AdminPage() {
             className="border border-sand-200 p-2"
           />
           <input
+            name="imageUrl"
+            value={form.imageUrl}
+            onChange={handleInput}
+            placeholder="Image URL (e.g. /images/vase-1.jpg)"
+            className="border border-sand-200 p-2"
+          />
+          <input
             name="dimensions"
             value={form.dimensions}
             onChange={handleInput}
