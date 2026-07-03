@@ -3,18 +3,16 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-// ── Add more images here as you get them ─────────────────────────────────────
-import caro1 from "../assets/caro1.jpeg";
-// import caro2 from "../assets/caro2.jpeg";
-// import caro3 from "../assets/caro3.jpeg";
-// import caro4 from "../assets/caro4.jpeg";
+import slide1 from "../assets/images/_H3A0118.jpeg";
+import slide2 from "../assets/images/_H3A0117.jpeg";
+import slide3 from "../assets/images/_H3A0116.jpeg";
+import slide4 from "../assets/images/IMG_5911.JPG";
 
 // Each slide: bg image + text + overlay tint + CTA
 const slides = [
   {
     id: 1,
-    image: caro1,
-    // dark gradient from bottom so text is legible
+    image: slide1,
     scrim: "from-mocha-500/80 via-mocha-400/40 to-transparent",
     textPosition: "items-end",   // text sits at bottom
     tagline: "Handcrafted Gypsum Décor · Sri Lanka",
@@ -25,7 +23,7 @@ const slides = [
   },
   {
     id: 2,
-    image: caro1,               // replace with caro2 when available
+    image: slide2,
     scrim: "from-mocha-500/70 via-mocha-300/30 to-transparent",
     textPosition: "items-end",
     tagline: "Curated For You",
@@ -35,7 +33,7 @@ const slides = [
   },
   {
     id: 3,
-    image: caro1,               // replace with caro3
+    image: slide3,
     scrim: "from-mocha-500/75 via-mocha-400/35 to-transparent",
     textPosition: "items-end",
     tagline: "Sacred Collections",
@@ -45,7 +43,7 @@ const slides = [
   },
   {
     id: 4,
-    image: caro1,               // replace with caro4
+    image: slide4,
     scrim: "from-mocha-500/65 via-mocha-300/25 to-transparent",
     textPosition: "items-end",
     tagline: "The Craft",

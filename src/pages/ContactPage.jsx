@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import contactsImg from "../assets/contacts.jpeg";
 import qrImg from "../assets/qr.jpeg";
+import contactHero from "../assets/images/IMG_5498.JPG";
 import { contactInfo } from "../data/contacts";
 import { fadeUp, fadeLeft, fadeRight, staggerContainer } from "../hooks/useScrollAnimation";
 
@@ -198,24 +199,37 @@ export default function ContactPage() {
 
   return (
     <main className="pt-20 min-h-screen bg-cream-100">
-      {/* Page header */}
-      <motion.div
-        className="bg-gradient-to-br from-cream-200 to-sand-100 py-16 px-6 text-center border-b border-sand-200"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <p className="font-sans text-xs tracking-[0.4em] uppercase text-mocha-200 mb-3">Get in Touch</p>
-        <h1 className="font-serif text-4xl md:text-5xl text-mocha-400 font-light tracking-wide mb-4">Contact Us</h1>
-        <div className="flex items-center justify-center gap-4">
-          <div className="h-px w-12 bg-sand-300" />
-          <div className="w-1 h-1 rounded-full bg-sand-400" />
-          <div className="h-px w-12 bg-sand-300" />
+      {/* Hero banner */}
+      <div className="relative h-[50vh] min-h-[400px] overflow-hidden">
+        <img
+          src={contactHero}
+          alt="Contact KANISHE."
+          className="w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-cream-100/90 via-cream-100/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-transparent" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <p className="font-sans text-xs tracking-[0.4em] uppercase text-cream-200 mb-3 drop-shadow-sm">Get in Touch</p>
+            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-light tracking-[0.1em] text-cream-50 mb-4 drop-shadow-md">
+              Contact Us
+            </h1>
+            <div className="flex items-center justify-center gap-4">
+              <div className="h-px w-12 bg-cream-200/60" />
+              <div className="w-1 h-1 rounded-full bg-cream-200/60" />
+              <div className="h-px w-12 bg-cream-200/60" />
+            </div>
+            <p className="font-sans text-sm text-cream-200 mt-5 max-w-sm mx-auto leading-relaxed drop-shadow-sm">
+              Reach us on any of the platforms below — we'd love to hear from you.
+            </p>
+          </motion.div>
         </div>
-        <p className="font-sans text-sm text-dusty-400 mt-5 max-w-sm mx-auto leading-relaxed">
-          Reach us on any of the platforms below — we'd love to hear from you.
-        </p>
-      </motion.div>
+      </div>
 
       <div className="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-2 gap-14">
 

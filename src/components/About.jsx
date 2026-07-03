@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { fadeUp, fadeLeft, fadeRight, scaleIn, staggerContainer, viewportOnce } from "../hooks/useScrollAnimation";
+import aboutHero from "../assets/images/IMG_5901.JPG";
 
 const policies = [
   {
@@ -22,24 +23,37 @@ const policies = [
 
 export default function About() {
   return (
-    <section className="py-24 px-6 bg-sand-100/30">
-      <div className="max-w-5xl mx-auto">
+    <section className="bg-sand-100/30">
+      {/* Hero banner */}
+      <div className="relative h-[50vh] min-h-[400px] overflow-hidden">
+        <img
+          src={aboutHero}
+          alt="About KANISHE."
+          className="w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-sand-100/90 via-sand-100/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-transparent" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <motion.div
+            className="text-center"
+            variants={fadeUp}
+            initial="hidden"
+            animate="show"
+          >
+            <p className="font-sans text-xs tracking-[0.4em] uppercase text-cream-200 mb-3 drop-shadow-sm">Our Story</p>
+            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-light tracking-[0.1em] text-cream-50 mb-4 drop-shadow-md">
+              About KANISHE.
+            </h1>
+            <div className="flex items-center justify-center gap-4">
+              <div className="h-px w-12 bg-cream-200/60" />
+              <div className="w-1 h-1 rounded-full bg-cream-200/60" />
+              <div className="h-px w-12 bg-cream-200/60" />
+            </div>
+          </motion.div>
+        </div>
+      </div>
 
-        {/* Header */}
-        <motion.div
-          className="text-center mb-16"
-          variants={fadeUp}
-          initial="hidden"
-          animate="show"
-        >
-          <p className="font-sans text-xs tracking-[0.4em] uppercase text-mocha-200 mb-3">Our Story</p>
-          <h2 className="section-title mb-4">About KANISHE.</h2>
-          <div className="flex items-center justify-center gap-4">
-            <div className="h-px w-12 bg-sand-300" />
-            <div className="w-1 h-1 rounded-full bg-sand-400" />
-            <div className="h-px w-12 bg-sand-300" />
-          </div>
-        </motion.div>
+      <div className="max-w-5xl mx-auto py-24 px-6">
 
         {/* Brand story */}
         <motion.div
