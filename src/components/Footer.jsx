@@ -15,7 +15,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between gap-10 mb-10">
           {/* Brand */}
           <div>
-            <Link to="/" className="font-logo text-3xl tracking-wider hover:text-cream-50 transition-colors">
+            <Link to="/" className="font-serif text-3xl tracking-[0.3em] font-light hover:text-cream-50 transition-colors">
               KANISHE.
             </Link>
             <p className="font-sans text-xs text-cream-300 tracking-wide mt-3">

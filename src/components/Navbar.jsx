@@ -33,7 +33,7 @@ export default function Navbar({ cartCount, onCartClick }) {
         {/* Logo */}
         <NavLink
           to="/"
-          className="font-logo text-2xl tracking-wider text-mocha-400 hover:text-mocha-500 transition-colors"
+          className="font-serif text-2xl tracking-[0.3em] text-mocha-400 font-light hover:text-mocha-500 transition-colors"
         >
           KANISHE.
         </NavLink>

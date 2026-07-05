@@ -41,7 +41,7 @@ export default function About() {
             animate="show"
           >
             <p className="font-sans text-xs tracking-[0.4em] uppercase text-cream-200 mb-3 drop-shadow-sm">Our Story</p>
-            <h1 className="font-logo text-5xl md:text-7xl lg:text-8xl tracking-wider text-cream-50 mb-4 drop-shadow-md">
+            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-light tracking-[0.1em] text-cream-50 mb-4 drop-shadow-md">
               About KANISHE.
             </h1>
             <div className="flex items-center justify-center gap-4">

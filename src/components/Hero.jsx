@@ -15,7 +15,7 @@ export default function Hero() {
         </p>
 
         {/* Brand name */}
-        <h1 className="font-logo text-6xl md:text-8xl tracking-wider text-mocha-400 mb-4">
+        <h1 className="font-serif text-6xl md:text-8xl font-light tracking-[0.25em] text-mocha-400 mb-4">
           KANISHE.
         </h1>
 

@@ -46,7 +46,7 @@ export default {
       fontFamily: {
         serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
         sans: ['"Jost"', '"Inter"', 'sans-serif'],
-        logo: ['"Euphoria Script"', 'cursive'],
+
       },
       letterSpacing: {
         widest: '0.3em',
