@@ -41,7 +41,7 @@ export default function About() {
             animate="show"
           >
             <p className="font-sans text-xs tracking-[0.4em] uppercase text-cream-200 mb-3 drop-shadow-sm">Our Story</p>
-            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-light tracking-[0.1em] text-cream-50 mb-4 drop-shadow-md">
+            <h1 className="font-logo text-5xl md:text-7xl lg:text-8xl tracking-wider text-cream-50 mb-4 drop-shadow-md">
               About KANISHE.
             </h1>
             <div className="flex items-center justify-center gap-4">
@@ -64,12 +64,25 @@ export default function About() {
           viewport={viewportOnce}
         >
           <p className="font-serif text-xl text-mocha-300 font-light italic leading-relaxed mb-6">
-            "Where craft meets calm."
+            "This is a story of two creatives, one shared vision and a love
+            for beautiful spaces."
           </p>
           <p className="font-sans text-sm text-dusty-400 leading-relaxed">
-            KANISHE. creates handcrafted gypsum home décor pieces designed to bring quiet elegance,
-            texture, and peace to your everyday spaces. Founded by Kånîshķá Rodrigo, each piece
-            is sculpted with care — from serene vases to sacred blessing kits.
+            Kanishe.home was founded in 2025 as a reflection of the love we share and the
+            creative paths that brought us together. At its heart, Kanishe. is shaped by two
+            artists. A designer and a musician. Each expressing creativity in different forms, yet
+            guided by the same sensitivity to rhythm, balance, and emotion. Where design
+            meets music, Kanishe. finds its language: quiet, intentional and deeply expressive.
+
+            Every piece is handcrafted in Sri Lanka drawing inspiration from minimal living,
+            natural textures and timeless forms. Our home décor is designed to feel calm and
+            understated,created to sit gently within modern spaces while adding warmth and
+            character. Kanishe. is more than a brand; it is a shared journey shaped by love, art
+            and a belief in creating beauty with a meaning.
+
+            Love,
+
+            Kanishka & Sheyal
           </p>
         </motion.div>
 

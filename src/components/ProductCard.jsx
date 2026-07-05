@@ -12,7 +12,7 @@ const tagColors = {
 export default function ProductCard({ product, onAddToCart, onViewProduct }) {
   return (
     <motion.div
-      className="product-card group flex flex-col cursor-pointer"
+      className="product-card group flex flex-col cursor-pointer h-full"
       whileHover={{ y: -5, boxShadow: "0 16px 40px rgba(90,60,30,0.12)" }}
       transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
     >

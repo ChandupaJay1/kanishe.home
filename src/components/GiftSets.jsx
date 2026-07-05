@@ -2,6 +2,13 @@ import { motion } from "framer-motion";
 import { ShoppingBag } from "lucide-react";
 import { giftSets } from "../data/products";
 import { fadeUp, fadeIn, staggerContainer, viewportOnce } from "../hooks/useScrollAnimation";
+import gs1 from "../assets/images/C3268957-F88C-4C66-A537-1423F94F4BB9.png";
+import gs2 from "../assets/images/40A514DB-7DDB-48BE-9049-F4EC8D4AE148.png";
+import gs3 from "../assets/images/IMG_5561.JPG";
+import gs4 from "../assets/images/IMG_5413.JPG";
+import gs5 from "../assets/images/IMG_3329.JPG";
+
+const giftSetImages = { gs1, gs2, gs3, gs4, gs5 };
 
 export default function GiftSets({ onAddToCart }) {
   return (
@@ -43,13 +50,12 @@ export default function GiftSets({ onAddToCart }) {
               className="bg-white/70 backdrop-blur-sm border border-sand-200 p-6 hover:border-mocha-200 transition-colors duration-300 group"
             >
               {/* Preview */}
-              <div className="w-full aspect-video bg-gradient-to-br from-cream-200 to-sand-100 mb-5 flex items-center justify-center">
-                <div className="text-center">
-                  {set.items.map((item, i) => (
-                    <p key={i} className="font-serif text-xs text-mocha-200 font-light">{item}</p>
-                  ))}
-                  <div className="mt-2 mx-auto w-8 h-px bg-sand-300" />
-                </div>
+              <div className="w-full aspect-video bg-gradient-to-br from-cream-200 to-sand-100 mb-5 overflow-hidden">
+                <img
+                  src={giftSetImages[set.id]}
+                  alt={set.name}
+                  className="w-full h-full object-cover"
+                />
               </div>
 
               <h3 className="font-serif text-base text-mocha-400 font-light leading-snug mb-1">

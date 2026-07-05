@@ -2,6 +2,23 @@ import { motion } from "framer-motion";
 import { ShoppingBag } from "lucide-react";
 import { blessingKits } from "../data/products";
 import { fadeUp, fadeLeft, staggerContainer, viewportOnce } from "../hooks/useScrollAnimation";
+import bk1 from "../assets/images/IMG_6097.PNG";
+import bk2 from "../assets/images/IMG_5881.PNG";
+import bk3 from "../assets/images/IMG_3289.JPG";
+import bk4 from "../assets/images/IMG_2696.JPG";
+import bk5 from "../assets/images/IMG_5901.JPG";
+import bk6 from "../assets/images/IMG_5498.JPG";
+import bk7 from "../assets/images/IMG_5911.JPG";
+
+const blessingKitImages = {
+  "Serenity Set": bk1,
+  "Grace Set":    bk2,
+  "Divine Set":   bk3,
+  "Harmony Set":  bk4,
+  "Aura Set":     bk5,
+  "Sacred Set":   bk6,
+  "Faith Set":    bk7,
+};
 
 const kitDescriptions = {
   "Serenity Set": "Find stillness. A gentle collection for your sacred corner.",
@@ -49,20 +66,27 @@ export default function BlessingKits({ onAddToCart }) {
             variants={fadeUp}
             whileHover={{ y: -5, boxShadow: "0 14px 36px rgba(90,60,30,0.10)" }}
             transition={{ duration: 0.25 }}
-            className="relative bg-gradient-to-br from-cream-100 to-sand-100 border border-sand-200 p-7 hover:border-mocha-200 transition-colors duration-300 group overflow-hidden"
+            className="relative bg-gradient-to-br from-cream-100 to-sand-100 border border-sand-200 hover:border-mocha-200 transition-colors duration-300 group overflow-hidden"
           >
-            {/* Background number */}
+            {/* Image */}
+            <div className="w-full aspect-[4/3] bg-gradient-to-br from-cream-200 to-sand-100 overflow-hidden">
+              <img
+                src={blessingKitImages[kit.name]}
+                alt={kit.name}
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Number */}
             <motion.span
               className="absolute top-4 right-5 font-serif text-6xl text-sand-200/60 font-light select-none"
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: index * 0.05 + 0.3, duration: 0.5 }}
               viewport={viewportOnce}
-            >
-              {String(index + 1).padStart(2, "0")}
-            </motion.span>
+            />
 
-            <div className="relative z-10">
+            <div className="p-7">
               <h3 className="font-serif text-xl text-mocha-400 font-light mb-2">{kit.name}</h3>
               <p className="font-sans text-xs text-dusty-400 leading-relaxed mb-6">
                 {kitDescriptions[kit.name] || "A beautiful blessing kit for your home."}

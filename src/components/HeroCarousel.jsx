@@ -17,6 +17,7 @@ const slides = [
     textPosition: "items-end",   // text sits at bottom
     tagline: "Handcrafted Gypsum Décor · Sri Lanka",
     heading: "KANISHE.",
+    isLogo: true,
     sub: "Home Décor Catalogue 2026",
     cta:  { label: "Shop Collection", to: "/shop" },
     cta2: { label: "Gift Sets",       to: "/gift-sets" },
@@ -119,7 +120,7 @@ export default function HeroCarousel() {
             </p>
 
             {/* Heading */}
-            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-light tracking-[0.1em] text-cream-50 mb-4 leading-none drop-shadow-md">
+            <h1 className={`${slide.isLogo ? "font-logo tracking-wider" : "font-serif tracking-[0.1em]"} text-5xl md:text-7xl lg:text-8xl font-light text-cream-50 mb-4 leading-none drop-shadow-md`}>
               {slide.heading}
             </h1>
 

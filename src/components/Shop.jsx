@@ -1,14 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { getProducts } from "../utils/storage";
-import { categories } from "../data/products";
+import { getProducts, getCategories } from "../utils/storage";
 import ProductCard from "./ProductCard";
 import { fadeUp, fadeIn, staggerContainer, viewportOnce } from "../hooks/useScrollAnimation";
 
+const ITEMS_PER_PAGE = 8;
+
 export default function Shop({ onAddToCart, onViewProduct }) {
   const products = getProducts();
+  const categories = getCategories();
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
+  const [page, setPage] = useState(1);
 
   const filtered = products.filter((p) => {
     const matchCat = activeCategory === "All" || p.category === activeCategory;
@@ -17,6 +20,12 @@ export default function Shop({ onAddToCart, onViewProduct }) {
       p.description.toLowerCase().includes(searchQuery.toLowerCase());
     return matchCat && matchSearch;
   });
+
+  const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
+  const paginated = filtered.slice((page - 1) * ITEMS_PER_PAGE, page * ITEMS_PER_PAGE);
+
+  // Reset to page 1 when filters change
+  useEffect(() => { setPage(1); }, [activeCategory, searchQuery]);
 
   return (
     <section className="py-24 px-6 max-w-7xl mx-auto">
@@ -98,14 +107,14 @@ export default function Shop({ onAddToCart, onViewProduct }) {
           </motion.div>
         ) : (
           <motion.div
-            key={activeCategory + searchQuery}
+            key={activeCategory + searchQuery + page}
             className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6"
             variants={staggerContainer(0.06)}
             initial="hidden"
             animate="show"
           >
-            {filtered.map((product) => (
-              <motion.div key={product.id} variants={fadeUp}>
+            {paginated.map((product) => (
+              <motion.div key={product.id} variants={fadeUp} className="h-full">
                 <ProductCard
                   product={product}
                   onAddToCart={onAddToCart}
@@ -116,6 +125,46 @@ export default function Shop({ onAddToCart, onViewProduct }) {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Pagination */}
+      {totalPages > 1 && (
+        <motion.div
+          className="flex items-center justify-center gap-3 mt-14"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+        >
+          <button
+            onClick={() => setPage((p) => Math.max(1, p - 1))}
+            disabled={page === 1}
+            className="px-4 py-2 border border-sand-200 text-dusty-400 font-sans text-xs tracking-widest uppercase hover:border-mocha-200 hover:text-mocha-300 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+          >
+            Prev
+          </button>
+
+          {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
+            <button
+              key={p}
+              onClick={() => setPage(p)}
+              className={`w-10 h-10 font-sans text-sm transition-all ${
+                p === page
+                  ? "bg-mocha-300 text-cream-50"
+                  : "border border-sand-200 text-dusty-400 hover:border-mocha-200 hover:text-mocha-300"
+              }`}
+            >
+              {p}
+            </button>
+          ))}
+
+          <button
+            onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+            disabled={page === totalPages}
+            className="px-4 py-2 border border-sand-200 text-dusty-400 font-sans text-xs tracking-widest uppercase hover:border-mocha-200 hover:text-mocha-300 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+          >
+            Next
+          </button>
+        </motion.div>
+      )}
     </section>
   );
 }

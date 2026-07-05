@@ -38,7 +38,7 @@ export default function FeaturedProducts({ onAddToCart, onViewProduct }) {
           viewport={viewportOnce}
         >
           {featured.map((product) => (
-            <motion.div key={product.id} variants={fadeUp}>
+            <motion.div key={product.id} variants={fadeUp} className="h-full">
               <ProductCard
                 product={product}
                 onAddToCart={onAddToCart}
