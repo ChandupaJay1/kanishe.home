@@ -52,6 +52,9 @@ export default function Footer() {
           <p className="font-sans text-xs text-cream-400">
             © 2026 KANISHE. · All rights reserved · Handcrafted with love
           </p>
+          <p className="font-sans text-xs text-cream-400 mt-3">
+            Developed and published by <a href="https://nerdtechlabs.info" target="_blank" rel="noopener noreferrer" className="text-cream-200 hover:text-cream-50 transition-colors underline underline-offset-2">Nerdtech Labs</a>
+          </p>
         </div>
       </div>
     </footer>
