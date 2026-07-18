@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Cart from "./components/Cart";
 import FloatingButtons from "./components/FloatingButtons";
+import Countdown from "./components/Countdown";
 
 import HomePage        from "./pages/HomePage";
 import ShopPage        from "./pages/ShopPage";
@@ -34,8 +35,11 @@ function PageTransition({ children }) {
 function Layout() {
   const [cartOpen, setCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
+  const [countdownDone, setCountdownDone] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === "/";
+
+  const handleCountdownDone = useCallback(() => setCountdownDone(true), []);
 
   const addToCart = (product) => {
     setCartItems((prev) => {
@@ -65,6 +69,11 @@ function Layout() {
 
   return (
     <div className="min-h-screen bg-cream-100 flex flex-col">
+      {/* Full-page countdown overlay */}
+      <AnimatePresence>
+        {!countdownDone && <Countdown onDone={handleCountdownDone} />}
+      </AnimatePresence>
+
       <Navbar cartCount={cartCount} onCartClick={() => setCartOpen(true)} />
 
       <div className="flex-1">
