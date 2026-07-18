@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import logonew from "../assets/logonew.PNG";
 
 // ── Target: July 19, 2026 12:00 PM (noon) Sri Lanka time (UTC+5:30) ──
-const TARGET = new Date("2026-07-19T12:00:00+05:30").getTime();
+const TARGET = new Date("2026-07-25T12:00:00+05:30").getTime();
 
 function getTimeLeft() {
   const diff = TARGET - Date.now();

@@ -1,13 +1,13 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import { ShoppingBag, Menu, X } from "lucide-react";
+import { ShoppingBag, Menu, X, LogOut } from "lucide-react";
 import logobrown from "../assets/logobrown.PNG";
 
 export default function Navbar({ cartCount, onCartClick }) {
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const { auth } = useAuth();
+  const { auth, logout } = useAuth();
+  const navigate = useNavigate();
   const navLinks = [
     { label: "Shop", to: "/shop" },
     { label: "Gift Sets", to: "/gift-sets" },
@@ -44,9 +44,18 @@ export default function Navbar({ cartCount, onCartClick }) {
             </NavLink>
           ))}
           {auth && (
-            <NavLink to="/admin" className={linkClass}>
-              Admin
-            </NavLink>
+            <>
+              <NavLink to="/admin" className={linkClass}>
+                Admin
+              </NavLink>
+              <button
+                onClick={() => { logout(); navigate("/"); }}
+                className="font-sans text-xs tracking-widest uppercase text-dusty-400 hover:text-red-400 transition-colors duration-200 flex items-center gap-1.5"
+              >
+                <LogOut size={14} strokeWidth={1.5} />
+                Logout
+              </button>
+            </>
           )}
         </div>
 
@@ -89,6 +98,24 @@ export default function Navbar({ cartCount, onCartClick }) {
               {link.label}
             </NavLink>
           ))}
+          {auth && (
+            <>
+              <NavLink
+                to="/admin"
+                className={mobileLinkClass}
+                onClick={() => setMenuOpen(false)}
+              >
+                Admin
+              </NavLink>
+              <button
+                onClick={() => { logout(); navigate("/"); setMenuOpen(false); }}
+                className="font-sans text-xs tracking-widest uppercase text-dusty-400 hover:text-red-400 transition-colors flex items-center gap-1.5"
+              >
+                <LogOut size={14} strokeWidth={1.5} />
+                Logout
+              </button>
+            </>
+          )}
         </div>
       )}
     </nav>

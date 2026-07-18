@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { getProducts, saveProducts, getCategories, saveCategories } from "../utils/storage";
 import { useAuth } from "../context/AuthContext";
 
@@ -6,6 +7,7 @@ const TABS = ["Dashboard", "Products", "Categories"];
 
 export default function AdminPage() {
   const { logout } = useAuth();
+  const navigate = useNavigate();
   const [tab, setTab] = useState("Dashboard");
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -110,7 +112,7 @@ export default function AdminPage() {
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <h1 className="text-lg sm:text-2xl font-serif text-mocha-400">Admin Dashboard</h1>
           <button
-            onClick={logout}
+            onClick={() => { logout(); navigate("/"); }}
             className="px-4 py-2 bg-mocha-300 text-cream-50 text-xs tracking-widest uppercase hover:bg-mocha-400"
           >
             Sign Out

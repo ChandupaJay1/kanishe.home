@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { AuthProvider } from "./context/AuthContext";
+import { AuthProvider, useAuth } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 import LoginPage from "./pages/LoginPage";
 import AdminPage from "./pages/AdminPage";
@@ -36,8 +36,10 @@ function Layout() {
   const [cartOpen, setCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [countdownDone, setCountdownDone] = useState(false);
+  const { auth } = useAuth();
   const location = useLocation();
   const isHome = location.pathname === "/";
+  const isAdminRoute = location.pathname === "/login" || location.pathname === "/admin";
 
   const handleCountdownDone = useCallback(() => setCountdownDone(true), []);
 
@@ -69,9 +71,9 @@ function Layout() {
 
   return (
     <div className="min-h-screen bg-cream-100 flex flex-col">
-      {/* Full-page countdown overlay */}
+      {/* Full-page countdown overlay — skip for logged-in admin */}
       <AnimatePresence>
-        {!countdownDone && <Countdown onDone={handleCountdownDone} />}
+        {!countdownDone && !auth && !isAdminRoute && <Countdown onDone={handleCountdownDone} />}
       </AnimatePresence>
 
       <Navbar cartCount={cartCount} onCartClick={() => setCartOpen(true)} />
