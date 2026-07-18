@@ -28,11 +28,11 @@ export default function Shop({ onAddToCart, onViewProduct }) {
   useEffect(() => { setPage(1); }, [activeCategory, searchQuery]);
 
   return (
-    <section className="py-24 px-6 max-w-7xl mx-auto">
+    <section className="py-16 sm:py-24 px-4 sm:px-6 max-w-7xl mx-auto">
 
       {/* Header */}
       <motion.div
-        className="text-center mb-16"
+        className="text-center mb-10 sm:mb-16"
         variants={fadeUp}
         initial="hidden"
         animate="show"
@@ -65,7 +65,7 @@ export default function Shop({ onAddToCart, onViewProduct }) {
 
       {/* Category filters */}
       <motion.div
-        className="flex flex-wrap justify-center gap-2 mb-12"
+        className="flex flex-wrap justify-center gap-2 mb-8 sm:mb-12"
         variants={staggerContainer(0.04)}
         initial="hidden"
         animate="show"
@@ -76,7 +76,7 @@ export default function Shop({ onAddToCart, onViewProduct }) {
             variants={fadeIn}
             whileTap={{ scale: 0.93 }}
             onClick={() => setActiveCategory(cat)}
-            className={`font-sans text-xs tracking-widest uppercase px-4 py-2 transition-all duration-200 ${
+              className={`font-sans text-[10px] sm:text-xs tracking-widest uppercase px-3 sm:px-4 py-1.5 sm:py-2 transition-all duration-200 ${
               activeCategory === cat
                 ? "bg-mocha-300 text-cream-50"
                 : "border border-sand-200 text-dusty-400 hover:border-mocha-200 hover:text-mocha-300"
@@ -108,7 +108,7 @@ export default function Shop({ onAddToCart, onViewProduct }) {
         ) : (
           <motion.div
             key={activeCategory + searchQuery + page}
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6"
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6"
             variants={staggerContainer(0.06)}
             initial="hidden"
             animate="show"

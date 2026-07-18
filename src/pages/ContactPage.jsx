@@ -200,7 +200,7 @@ export default function ContactPage() {
   return (
     <main className="pt-20 min-h-screen bg-cream-100">
       {/* Hero banner */}
-      <div className="relative h-[50vh] min-h-[400px] overflow-hidden">
+      <div className="relative h-[40vh] sm:h-[50vh] min-h-[300px] sm:min-h-[400px] overflow-hidden">
         <img
           src={contactHero}
           alt="Contact KANISHE."
@@ -216,7 +216,7 @@ export default function ContactPage() {
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
             <p className="font-sans text-xs tracking-[0.4em] uppercase text-cream-200 mb-3 drop-shadow-sm">Get in Touch</p>
-            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-light tracking-[0.1em] text-cream-50 mb-4 drop-shadow-md">
+            <h1 className="font-serif text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-light tracking-[0.1em] text-cream-50 mb-4 drop-shadow-md">
               Contact Us
             </h1>
             <div className="flex items-center justify-center gap-4">
@@ -231,7 +231,7 @@ export default function ContactPage() {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-2 gap-14">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-16 grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-14">
 
         {/* LEFT */}
         <motion.div

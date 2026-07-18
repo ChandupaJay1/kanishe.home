@@ -32,7 +32,7 @@ const kitDescriptions = {
 
 export default function BlessingKits({ onAddToCart }) {
   return (
-    <section className="py-24 px-6 max-w-6xl mx-auto">
+    <section className="py-16 sm:py-24 px-4 sm:px-6 max-w-6xl mx-auto">
 
       {/* Header */}
       <motion.div
@@ -55,7 +55,7 @@ export default function BlessingKits({ onAddToCart }) {
 
       {/* Grid */}
       <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5"
         variants={staggerContainer(0.1)}
         initial="hidden"
         animate="show"
@@ -86,7 +86,7 @@ export default function BlessingKits({ onAddToCart }) {
               viewport={viewportOnce}
             />
 
-            <div className="p-7">
+            <div className="p-5 sm:p-7">
               <h3 className="font-serif text-xl text-mocha-400 font-light mb-2">{kit.name}</h3>
               <p className="font-sans text-xs text-dusty-400 leading-relaxed mb-6">
                 {kitDescriptions[kit.name] || "A beautiful blessing kit for your home."}

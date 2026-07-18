@@ -44,7 +44,7 @@ export default function Cart({ items, onClose, onUpdateQty, onRemove }) {
 
       {/* Drawer */}
       <motion.div
-        className="fixed top-0 right-0 h-full w-full max-w-md bg-cream-50 z-50 shadow-2xl flex flex-col"
+        className="fixed top-0 right-0 h-full w-full sm:max-w-md bg-cream-50 z-50 shadow-2xl flex flex-col"
         initial={{ x: "100%" }}
         animate={{ x: 0 }}
         exit={{ x: "100%" }}

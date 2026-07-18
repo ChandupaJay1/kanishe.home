@@ -25,7 +25,7 @@ export default function About() {
   return (
     <section className="bg-sand-100/30">
       {/* Hero banner */}
-      <div className="relative h-[50vh] min-h-[400px] overflow-hidden">
+      <div className="relative h-[40vh] sm:h-[50vh] min-h-[300px] sm:min-h-[400px] overflow-hidden">
         <img
           src={aboutHero}
           alt="About KANISHE."
@@ -41,7 +41,7 @@ export default function About() {
             animate="show"
           >
             <p className="font-sans text-xs tracking-[0.4em] uppercase text-cream-200 mb-3 drop-shadow-sm">Our Story</p>
-            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-light tracking-[0.1em] text-cream-50 mb-4 drop-shadow-md">
+            <h1 className="font-serif text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-light tracking-[0.1em] text-cream-50 mb-4 drop-shadow-md">
               About KANISHE.
             </h1>
             <div className="flex items-center justify-center gap-4">
@@ -88,7 +88,7 @@ export default function About() {
 
         {/* Policies grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6"
           variants={staggerContainer(0.12)}
           initial="hidden"
           whileInView="show"
@@ -98,7 +98,7 @@ export default function About() {
             <motion.div
               key={p.title}
               variants={i % 2 === 0 ? fadeLeft : fadeRight}
-              className="bg-white/50 border border-sand-200 p-7 hover:border-mocha-200 transition-colors duration-300"
+              className="bg-white/50 border border-sand-200 p-5 sm:p-7 hover:border-mocha-200 transition-colors duration-300"
             >
               <h3 className="font-serif text-lg text-mocha-400 font-light mb-3">{p.title}</h3>
               <p className="font-sans text-xs text-dusty-400 leading-relaxed">{p.body}</p>

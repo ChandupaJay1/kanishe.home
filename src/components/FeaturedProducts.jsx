@@ -9,14 +9,14 @@ const featured = featuredIds.map((id) => products.find((p) => p.id === id)).filt
 
 export default function FeaturedProducts({ onAddToCart, onViewProduct }) {
   return (
-    <section className="py-20 px-6 bg-cream-100">
+    <section className="py-16 sm:py-20 px-4 sm:px-6 bg-cream-100">
       <div className="max-w-7xl mx-auto">
 
         {/* Header */}
-        <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-12 gap-4">
+        <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-10 sm:mb-12 gap-3 sm:gap-4">
           <motion.div variants={fadeLeft} initial="hidden" whileInView="show" viewport={viewportOnce}>
             <p className="font-sans text-xs tracking-[0.4em] uppercase text-mocha-200 mb-2">Handpicked</p>
-            <h2 className="font-serif text-3xl md:text-4xl text-mocha-400 font-light">Featured Pieces</h2>
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-mocha-400 font-light">Featured Pieces</h2>
           </motion.div>
 
           <motion.div variants={fadeRight} initial="hidden" whileInView="show" viewport={viewportOnce}>
@@ -31,7 +31,7 @@ export default function FeaturedProducts({ onAddToCart, onViewProduct }) {
 
         {/* Grid with stagger */}
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6"
           variants={staggerContainer(0.08)}
           initial="hidden"
           whileInView="show"

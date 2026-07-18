@@ -105,7 +105,7 @@ export default function HeroCarousel() {
       </AnimatePresence>
 
       {/* ── Text content — bottom-left ── */}
-      <div className={`absolute inset-0 z-10 flex flex-col justify-end px-8 md:px-16 pb-28`}>
+      <div className={`absolute inset-0 z-10 flex flex-col justify-end px-5 sm:px-8 md:px-16 pb-20 sm:pb-28`}>
         <AnimatePresence mode="wait">
           <motion.div
             key={current + "-text"}
@@ -122,7 +122,7 @@ export default function HeroCarousel() {
 
             {/* Heading / Logo */}
             {slide.isLogo ? (
-              <img src={logonew} alt="KANISHE." className="h-16 md:h-28 mb-6" />
+              <img src={logonew} alt="KANISHE." className="h-14 sm:h-16 md:h-20 lg:h-28 mb-6" />
             ) : (
               <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-light tracking-[0.1em] text-cream-50 mb-4 leading-none drop-shadow-md">
                 {slide.heading}
@@ -130,7 +130,7 @@ export default function HeroCarousel() {
             )}
 
             {/* Sub */}
-            <p className="font-serif italic text-lg md:text-xl text-cream-200 font-light mb-8 max-w-md drop-shadow-sm">
+            <p className="font-serif italic text-base sm:text-lg md:text-xl text-cream-200 font-light mb-6 sm:mb-8 max-w-md drop-shadow-sm">
               {slide.sub}
             </p>
 
@@ -158,21 +158,21 @@ export default function HeroCarousel() {
       {/* ── Prev / Next arrows ── */}
       <button
         onClick={prev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 flex items-center justify-center bg-black/20 hover:bg-black/35 border border-white/20 text-cream-50 backdrop-blur-sm transition-all duration-200 rounded-full"
+        className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 flex items-center justify-center bg-black/20 hover:bg-black/35 border border-white/20 text-cream-50 backdrop-blur-sm transition-all duration-200 rounded-full"
         aria-label="Previous slide"
       >
-        <ChevronLeft size={20} strokeWidth={1.5} />
+        <ChevronLeft size={18} strokeWidth={1.5} />
       </button>
       <button
         onClick={next}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 flex items-center justify-center bg-black/20 hover:bg-black/35 border border-white/20 text-cream-50 backdrop-blur-sm transition-all duration-200 rounded-full"
+        className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-11 sm:h-11 flex items-center justify-center bg-black/20 hover:bg-black/35 border border-white/20 text-cream-50 backdrop-blur-sm transition-all duration-200 rounded-full"
         aria-label="Next slide"
       >
-        <ChevronRight size={20} strokeWidth={1.5} />
+        <ChevronRight size={18} strokeWidth={1.5} />
       </button>
 
       {/* ── Progress bar + dots — bottom ── */}
-      <div className="absolute bottom-8 left-8 md:left-16 z-20 flex items-center gap-4">
+      <div className="absolute bottom-6 sm:bottom-8 left-4 sm:left-8 md:left-16 z-20 flex items-center gap-3 sm:gap-4">
         {/* Dots */}
         <div className="flex gap-2">
           {slides.map((_, i) => (

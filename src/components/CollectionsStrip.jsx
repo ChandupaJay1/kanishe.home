@@ -11,7 +11,7 @@ const collections = [
 
 export default function CollectionsStrip() {
   return (
-    <section className="py-16 px-6 bg-cream-50">
+    <section className="py-12 sm:py-16 px-4 sm:px-6 bg-cream-50">
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}
@@ -28,7 +28,7 @@ export default function CollectionsStrip() {
 
         {/* Grid */}
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-4"
+          className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4"
           variants={staggerContainer(0.1)}
           initial="hidden"
           whileInView="show"
@@ -38,7 +38,7 @@ export default function CollectionsStrip() {
             <motion.div key={col.label} variants={fadeUp}>
               <Link
                 to={col.to}
-                className={`group bg-gradient-to-br ${col.bg} border border-sand-200 hover:border-mocha-200 p-6 flex flex-col items-center text-center gap-3 transition-colors duration-300 hover:shadow-md block`}
+                className={`group bg-gradient-to-br ${col.bg} border border-sand-200 hover:border-mocha-200 p-4 sm:p-6 flex flex-col items-center text-center gap-2 sm:gap-3 transition-colors duration-300 hover:shadow-md block`}
               >
                 <motion.span
                   className="text-3xl"

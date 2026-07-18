@@ -106,9 +106,9 @@ export default function AdminPage() {
   return (
     <section className="min-h-screen bg-cream-100 pb-12">
       {/* Header */}
-      <header className="bg-white border-b border-sand-200 px-6 py-4">
+      <header className="bg-white border-b border-sand-200 px-4 sm:px-6 py-3 sm:py-4">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
-          <h1 className="text-2xl font-serif text-mocha-400">Admin Dashboard</h1>
+          <h1 className="text-lg sm:text-2xl font-serif text-mocha-400">Admin Dashboard</h1>
           <button
             onClick={logout}
             className="px-4 py-2 bg-mocha-300 text-cream-50 text-xs tracking-widest uppercase hover:bg-mocha-400"
@@ -119,13 +119,13 @@ export default function AdminPage() {
       </header>
 
       {/* Tabs */}
-      <div className="max-w-6xl mx-auto px-6 pt-6">
-        <nav className="flex gap-1 border-b border-sand-200">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-4 sm:pt-6">
+        <nav className="flex gap-1 border-b border-sand-200 overflow-x-auto">
           {TABS.map((t) => (
             <button
               key={t}
               onClick={() => setTab(t)}
-              className={`px-5 py-2.5 font-sans text-xs tracking-widest uppercase transition-colors ${
+              className={`px-3 sm:px-5 py-2 sm:py-2.5 font-sans text-[10px] sm:text-xs tracking-widest uppercase transition-colors whitespace-nowrap ${
                 tab === t
                   ? "bg-white text-mocha-400 border-t border-l border-r border-sand-200 -mb-px"
                   : "text-dusty-400 hover:text-mocha-300"
@@ -137,7 +137,7 @@ export default function AdminPage() {
         </nav>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 pt-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-6 sm:pt-8">
 
         {/* ── Dashboard Tab ── */}
         {tab === "Dashboard" && (

@@ -19,7 +19,7 @@ export default function InfoSection() {
 
   return (
     <>
-      <section className="py-20 px-6 bg-sand-100/40">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 bg-sand-100/40">
         <div className="max-w-6xl mx-auto">
 
           {/* Header */}
@@ -31,7 +31,7 @@ export default function InfoSection() {
             viewport={viewportOnce}
           >
             <p className="font-sans text-xs tracking-[0.4em] uppercase text-mocha-200 mb-2">Good to Know</p>
-            <h2 className="font-serif text-3xl md:text-4xl text-mocha-400 font-light mb-4">Guides & Tips</h2>
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-mocha-400 font-light mb-4">Guides & Tips</h2>
             <div className="flex items-center justify-center gap-4">
               <div className="h-px w-12 bg-sand-300" />
               <div className="w-1 h-1 rounded-full bg-sand-400" />
@@ -41,7 +41,7 @@ export default function InfoSection() {
 
           {/* Cards */}
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6"
             variants={staggerContainer(0.15)}
             initial="hidden"
             whileInView="show"
@@ -70,7 +70,7 @@ export default function InfoSection() {
                     {card.badge}
                   </span>
                 </div>
-                <div className="p-5">
+                <div className="p-4 sm:p-5">
                   <h3 className="font-serif text-lg text-mocha-400 font-light mb-1">{card.title}</h3>
                   <p className="font-sans text-xs text-dusty-400">{card.subtitle}</p>
                   <p className="font-sans text-xs text-mocha-300 mt-3 tracking-widest uppercase group-hover:text-mocha-500 transition-colors">

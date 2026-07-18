@@ -16,10 +16,10 @@ export default function Hero() {
         </p>
 
         {/* Brand logo */}
-        <img src={logonew} alt="KANISHE." className="h-16 md:h-24 mb-6" />
+        <img src={logonew} alt="KANISHE." className="h-14 sm:h-16 md:h-20 lg:h-24 mb-6" />
 
         {/* Subtitle */}
-        <p className="font-serif italic text-xl md:text-2xl text-mocha-200 font-light mb-8">
+        <p className="font-serif italic text-lg sm:text-xl md:text-2xl text-mocha-200 font-light mb-6 sm:mb-8">
           Home Décor Catalogue 2026
         </p>
 
@@ -30,7 +30,7 @@ export default function Hero() {
           <div className="h-px w-16 bg-sand-300" />
         </div>
 
-        <p className="font-sans text-sm text-dusty-400 leading-relaxed max-w-md mx-auto mb-12">
+        <p className="font-sans text-sm sm:text-base text-dusty-400 leading-relaxed max-w-md mx-auto mb-8 sm:mb-12">
           Each piece individually handcrafted — bringing quiet elegance,
           texture, and calm to your everyday spaces.
         </p>

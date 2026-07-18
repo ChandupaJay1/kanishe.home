@@ -31,7 +31,7 @@ const reviews = [
 
 export default function Reviews() {
   return (
-    <section className="py-20 px-6 bg-cream-100">
+    <section className="py-16 sm:py-20 px-4 sm:px-6 bg-cream-100">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
@@ -58,7 +58,7 @@ export default function Reviews() {
 
         {/* Reviews grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-5"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5"
           variants={staggerContainer(0.1)}
           initial="hidden"
           whileInView="show"
@@ -68,7 +68,7 @@ export default function Reviews() {
             <motion.div
               key={r.name}
               variants={i % 2 === 0 ? fadeLeft : fadeRight}
-              className="bg-white border border-sand-200 p-6 hover:border-mocha-200 transition-colors duration-300"
+              className="bg-white border border-sand-200 p-4 sm:p-6 hover:border-mocha-200 transition-colors duration-300"
             >
               <div className="flex items-center gap-1 mb-3">
                 {Array.from({ length: r.rating }, (_, s) => (

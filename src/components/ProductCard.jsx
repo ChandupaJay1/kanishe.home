@@ -55,28 +55,28 @@ export default function ProductCard({ product, onAddToCart, onViewProduct }) {
       </div>
 
       {/* Info */}
-      <div className="p-4 flex flex-col gap-2 flex-1">
-        <p className="font-sans text-xs tracking-widest uppercase text-dusty-400">{product.category}</p>
+      <div className="p-3 sm:p-4 flex flex-col gap-1.5 sm:gap-2 flex-1">
+        <p className="font-sans text-[10px] sm:text-xs tracking-widest uppercase text-dusty-400">{product.category}</p>
         <h3
-          className="font-serif text-lg text-mocha-400 font-light leading-snug hover:text-mocha-300 transition-colors cursor-pointer"
+          className="font-serif text-sm sm:text-base lg:text-lg text-mocha-400 font-light leading-snug hover:text-mocha-300 transition-colors cursor-pointer"
           onClick={() => onViewProduct(product)}
         >
           {product.name}
         </h3>
-        <p className="font-sans text-xs text-dusty-400 leading-relaxed flex-1">{product.description}</p>
-        <p className="font-sans text-xs text-dusty-300 mt-1">{product.dimensions}</p>
+        <p className="font-sans text-[10px] sm:text-xs text-dusty-400 leading-relaxed flex-1 hidden sm:block">{product.description}</p>
+        <p className="font-sans text-[10px] sm:text-xs text-dusty-300 mt-0.5 sm:mt-1">{product.dimensions}</p>
 
-        <div className="flex items-center justify-between mt-3 pt-3 border-t border-sand-100">
-          <span className="font-serif text-lg text-mocha-400">
+        <div className="flex items-center justify-between mt-2 sm:mt-3 pt-2 sm:pt-3 border-t border-sand-100">
+          <span className="font-serif text-sm sm:text-base lg:text-lg text-mocha-400">
             LKR {product.price.toLocaleString()}
           </span>
           <motion.button
             onClick={() => onAddToCart(product)}
             whileTap={{ scale: 0.85 }}
-            className="w-8 h-8 flex items-center justify-center border border-mocha-200 text-mocha-300 hover:bg-mocha-300 hover:text-cream-50 hover:border-mocha-300 transition-all duration-200"
+            className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center border border-mocha-200 text-mocha-300 hover:bg-mocha-300 hover:text-cream-50 hover:border-mocha-300 transition-all duration-200"
             aria-label={`Add ${product.name} to cart`}
           >
-            <ShoppingBag size={14} strokeWidth={1.5} />
+            <ShoppingBag size={13} strokeWidth={1.5} />
           </motion.button>
         </div>
       </div>

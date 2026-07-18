@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 @layer base {
-  html {
+  html, body, #root {
+    overflow-x: hidden;
     scroll-behavior: smooth;
   }
 

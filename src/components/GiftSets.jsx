@@ -12,7 +12,7 @@ const giftSetImages = { gs1, gs2, gs3, gs4, gs5 };
 
 export default function GiftSets({ onAddToCart }) {
   return (
-    <section className="py-24 px-6 bg-sand-100/40">
+    <section className="py-16 sm:py-24 px-4 sm:px-6 bg-sand-100/40">
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}
@@ -36,7 +36,7 @@ export default function GiftSets({ onAddToCart }) {
 
         {/* Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
           variants={staggerContainer(0.1)}
           initial="hidden"
           animate="show"
@@ -47,7 +47,7 @@ export default function GiftSets({ onAddToCart }) {
               variants={fadeUp}
               whileHover={{ y: -6, boxShadow: "0 16px 40px rgba(90,60,30,0.10)" }}
               transition={{ duration: 0.25 }}
-              className="bg-white/70 backdrop-blur-sm border border-sand-200 p-6 hover:border-mocha-200 transition-colors duration-300 group"
+              className="bg-white/70 backdrop-blur-sm border border-sand-200 p-4 sm:p-6 hover:border-mocha-200 transition-colors duration-300 group"
             >
               {/* Preview */}
               <div className="w-full aspect-video bg-gradient-to-br from-cream-200 to-sand-100 mb-5 overflow-hidden">

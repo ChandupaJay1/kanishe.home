@@ -45,7 +45,7 @@ export default function ProductModal({ product, onClose, onAddToCart }) {
       {/* Modal container */}
       <div className="fixed inset-0 z-[70] flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-label={product.name}>
         <motion.div
-          className="bg-cream-50 w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl flex flex-col md:flex-row"
+          className="bg-cream-50 w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl flex flex-col sm:flex-row"
           initial={{ opacity: 0, scale: 0.92, y: 24 }}
           animate={{ opacity: 1, scale: 1,    y: 0 }}
           exit={{   opacity: 0, scale: 0.94,  y: 16 }}
