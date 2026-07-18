@@ -2,6 +2,7 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { ShoppingBag, Menu, X } from "lucide-react";
+import logoblack from "../assets/logoblack.PNG";
 
 export default function Navbar({ cartCount, onCartClick }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -31,11 +32,8 @@ export default function Navbar({ cartCount, onCartClick }) {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-cream-100/90 backdrop-blur-md border-b border-sand-200">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <NavLink
-          to="/"
-          className="font-serif text-2xl tracking-[0.3em] text-mocha-400 font-light hover:text-mocha-500 transition-colors"
-        >
-          KANISHE.
+        <NavLink to="/">
+          <img src={logoblack} alt="KANISHE." className="h-8 md:h-10" />
         </NavLink>
 
         {/* Desktop Nav */}

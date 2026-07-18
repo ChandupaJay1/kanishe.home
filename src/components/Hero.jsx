@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logonew from "../assets/logonew.PNG";
 
 export default function Hero() {
   return (
@@ -14,10 +15,8 @@ export default function Hero() {
           Handcrafted Gypsum Décor · Sri Lanka
         </p>
 
-        {/* Brand name */}
-        <h1 className="font-serif text-6xl md:text-8xl font-light tracking-[0.25em] text-mocha-400 mb-4">
-          KANISHE.
-        </h1>
+        {/* Brand logo */}
+        <img src={logonew} alt="KANISHE." className="h-16 md:h-24 mb-6" />
 
         {/* Subtitle */}
         <p className="font-serif italic text-xl md:text-2xl text-mocha-200 font-light mb-8">

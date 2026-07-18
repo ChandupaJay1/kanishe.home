@@ -7,6 +7,7 @@ import slide1 from "../assets/images/_H3A0118.jpeg";
 import slide2 from "../assets/images/_H3A0117.jpeg";
 import slide3 from "../assets/images/_H3A0116.jpeg";
 import slide4 from "../assets/images/IMG_5911.JPG";
+import logonew from "../assets/logonew.PNG";
 
 // Each slide: bg image + text + overlay tint + CTA
 const slides = [
@@ -15,8 +16,9 @@ const slides = [
     image: slide1,
     scrim: "from-mocha-500/80 via-mocha-400/40 to-transparent",
     textPosition: "items-end",   // text sits at bottom
-    tagline: "Handcrafted Gypsum Décor · Sri Lanka",
+    tagline: "Handcrafted Gypsum Décor · Sri Lanka", // This will be replaced with logo-H version
     heading: "KANISHE.",
+    isLogo: true,
     sub: "Home Décor Catalogue 2026",
     cta:  { label: "Shop Collection", to: "/shop" },
     cta2: { label: "Gift Sets",       to: "/gift-sets" },
@@ -118,10 +120,14 @@ export default function HeroCarousel() {
               {slide.tagline}
             </p>
 
-            {/* Heading */}
-            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-light tracking-[0.1em] text-cream-50 mb-4 leading-none drop-shadow-md">
-              {slide.heading}
-            </h1>
+            {/* Heading / Logo */}
+            {slide.isLogo ? (
+              <img src={logonew} alt="KANISHE." className="h-16 md:h-28 mb-6" />
+            ) : (
+              <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-light tracking-[0.1em] text-cream-50 mb-4 leading-none drop-shadow-md">
+                {slide.heading}
+              </h1>
+            )}
 
             {/* Sub */}
             <p className="font-serif italic text-lg md:text-xl text-cream-200 font-light mb-8 max-w-md drop-shadow-sm">
